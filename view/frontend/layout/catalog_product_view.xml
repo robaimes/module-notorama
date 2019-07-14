@@ -8,15 +8,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <!-- Add custom blocks -->
-        <referenceContainer name="main">
-            <container name="notorama.container" htmlTag="div" htmlClass="notorama-container" before="-" />
-        </referenceContainer>
-
-        <move element="product.info.media" destination="notorama.container" before="-" />
-        <move element="product.info.main" destination="notorama.container" after="product.info.media" />
-
-        <referenceContainer name="product.info.media">
+        <referenceContainer name="product.info.media" htmlTag="div" htmlClass="product media notorama-container">
             <block name="notorama.gallery" class="Aimes\Notorama\Block\Product\Gallery" template="Aimes_Notorama::product/gallery.phtml">
                 <!-- Insert options -->
             </block>
