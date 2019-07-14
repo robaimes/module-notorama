@@ -7,12 +7,6 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <!-- This is terrible and only here for prototyping, will move to _module.less in future -->
-    <head>
-        <css src="Aimes_Notorama::css/slick.css"/>
-        <css src="Aimes_Notorama::css/slick-lightbox.css"/>
-        <css src="Aimes_Notorama::css/main.css"/>
-    </head>
     <body>
         <!-- Add custom blocks -->
         <referenceContainer name="main">
