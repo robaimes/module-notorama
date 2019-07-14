@@ -18,8 +18,8 @@ define([
     var viewerSelector = '#notorama-viewer',
         carouselSelector = '#notorama-carousel',
         galleryDots = '#notorama-dots',
-        nextArrowHtml = '<button type="button" class="slick-arrow slick-next"><svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%"><path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="#fff"></path></svg></button>',
-        prevArrowHtml = '<button type="button" class="slick-arrow slick-prev"><svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%"><path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="#fff"></path></svg></button>';
+        nextArrowHtml = '<button type="button" class="slick-arrow slick-next"><svg viewBox="0 0 32 32" width="32" height="32"><path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="currentColor"></path></svg></button>',
+        prevArrowHtml = '<button type="button" class="slick-arrow slick-prev"><svg viewBox="0 0 32 32" width="32" height="32"><path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="currentColor"></path></svg></button>';
 
     $.widget('aimes.notorama', {
         options: {
