@@ -1,6 +1,7 @@
 {
   "name": "aimes/notorama",
   "description": "A Magento 2 module that adds a link to a random product",
+  "homepage": "https://github.com/robaimes/module-notorama",
   "type": "magento2-module",
   "version": "1.0.0",
   "license": [
@@ -15,8 +16,9 @@
     }
   ],
   "require": {
-    "php": "~5.5.0|~5.6.0|~7.0.0",
-    "magento/module-catalog": "~101.0.0^"
+    "magento/framework": "^101.1|^102.0",
+    "magento/module-catalog": "^101.0|^102.0|^103.0",
+    "php": "~7.0.0"
   },
   "autoload": {
     "files": [ "registration.php" ],
