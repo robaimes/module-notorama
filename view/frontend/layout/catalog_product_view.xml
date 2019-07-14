@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- This is terrible and only here for prototyping, will move to _module.less in future -->
+    <head>
+        <css src="Aimes_Notorama::css/slick.css"/>
+        <css src="Aimes_Notorama::css/slick-lightbox.css"/>
+        <css src="Aimes_Notorama::css/main.css"/>
+    </head>
+    <body>
+        <!-- Add custom blocks -->
+        <referenceContainer name="main">
+            <container name="notorama.container" htmlTag="div" htmlClass="notorama-container" before="-" />
+        </referenceContainer>
+
+        <move element="product.info.media" destination="notorama.container" before="-" />
+        <move element="product.info.main" destination="notorama.container" after="product.info.media" />
+
+        <referenceContainer name="product.info.media">
+            <block name="notorama.gallery" class="Aimes\Notorama\Block\Product\Gallery" template="Aimes_Notorama::product/gallery.phtml">
+                <!-- Insert options -->
+            </block>
+        </referenceContainer>
+
+        <!-- Remove default gallery blocks -->
+        <referenceContainer name="product.info.media.image" remove="true"/>
+        <referenceContainer name="skip_gallery_after.target" remove="true"/>
+        <referenceContainer name="skip_gallery_before.wrapper" remove="true"/>
+        <referenceContainer name="skip_gallery_after.wrapper" remove="true"/>
+        <referenceContainer name="skip_gallery_before.target" remove="true"/>
+    </body>
+</page>

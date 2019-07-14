@@ -1,0 +1,61 @@
+<?php
+/**
+ * Copyright © Rob Aimes - https://aimes.dev
+ */
+
+/**
+ * Product media data template
+ *
+ * @var $block \Aimes\Notorama\Block\Product\Gallery
+ */
+?>
+<div id="notorama-gallery" class="notorama loading" data-mage-init='{"notorama": <?= $block->getJsConfig() ?>}'>
+    <div id="gallery-placeholder" class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
+        <div class="notorama-view-wrapper">
+            <div id="notorama-viewer" class="notorama-gallery-view">
+                <button type="button" class="slick-arrow slick-prev">
+                    <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
+                        <path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="#fff"></path>
+                    </svg>
+                </button>
+                <div class="placeholder">
+                    <img class="notorama-placeholder-img" src="<?= $block->getPlaceholderImage() ?>" alt="<?= $block->getPlaceholderImageCaption() ?>" />
+                </div>
+                <button type="button" class="slick-arrow slick-next">
+                    <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
+                        <path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="#fff"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="notorama-zoom"></div>
+        </div>
+        <div id="notorama-dots">
+            <ul class="slick-dots">
+                <?php foreach ($block->getPlaceholderGalleryImages() as $i =>  $image): ?>
+                <li class="<?= $i==0 ? 'slick-active"' : '' ?>">
+                    <button type="button"><?= $i ?></button>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div id="notorama-carousel">
+            <button type="button" class="slick-arrow slick-prev">
+                <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
+                    <path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="#fff"></path>
+                </svg>
+            </button>
+            <div class="placeholder">
+                <?php foreach ($block->getPlaceholderGalleryImages() as $i => $image): ?>
+                <div class="notorama-placeholder-thumb <?= $i==0 ? 'slick-current"' : '' ?>">
+                    <img src="<?= $image->getData('small_image_url') ?>" alt="<?= $image->getData('label') ?>" />
+                </div>
+                <?php endforeach ?>
+            </div>
+            <button type="button" class="slick-arrow slick-next">
+                <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
+                    <path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="#fff"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

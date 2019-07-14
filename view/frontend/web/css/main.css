@@ -1,0 +1,306 @@
+body.lightbox-open {
+    overflow-x: hidden;
+    overflow-y: hidden; /* safari fixes */
+    overflow: hidden;
+}
+
+.notorama-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.notorama-container > div {
+    width: 100%;
+}
+
+.notorama-container .product.media {
+    align-items: center;
+}
+
+#notorama-gallery {
+    text-align: center;
+    max-width: 100%;
+}
+
+.product-info-main {
+    padding-left: 25px;
+    flex: 0 1 50%;
+}
+
+.notorama-view-wrapper {
+    position: relative;
+}
+
+.notorama-zoom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(46, 46, 46, 0.9);
+    color: #ffffff;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.notorama-zoom::after {
+    content: '';
+    background-image: url("zoom.svg");
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    list-style-type: none;
+}
+
+.slick-dots li {
+    margin: 0 0.25rem;
+}
+
+.slick-dots button {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #5e5e5e;
+    text-indent: -9999px;
+    box-shadow: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #db8052;
+}
+
+#notorama-gallery {
+    position: relative;
+}
+
+#notorama-gallery img {
+    box-sizing: border-box;
+}
+
+#notorama-gallery.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 5;
+}
+
+#notorama-gallery.loading::after {
+    content: '';
+    height: 64px;
+    width: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border: 16px solid #5e5e5e;
+    border-radius: 50%;
+    border-top: 16px solid #db8052;
+    animation: spin 2s linear infinite;
+    z-index: 10;
+}
+
+.notorama-placeholder-img {
+    width: 100%;
+    height: 100%;
+}
+
+#notorama-carousel {
+    text-align: left;
+    display: none;
+    padding: 0 48px;
+}
+
+#notorama-carousel .slick-list {
+    width: 100%;
+}
+
+#notorama-carousel .slick-current img {
+    border: 2px solid #db8052;
+}
+
+
+/* Custom slick stuff */
+.slick-track {
+    display: flex;
+}
+
+/* Use flex so we can center the videos */
+.slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+    height: 100%;
+}
+
+.slick-slider img {
+    height: auto;
+}
+
+button.slick-arrow {
+    position: absolute;
+    margin: auto;
+    height: 48px;
+    width: 48px;
+    z-index: 1;
+    font-size: 24px;
+    line-height: 48px;
+    padding: 0;
+    border-radius: 4px;
+    background: rgba(46, 46, 46, 0.9);
+    color: #dedede;
+    border: none;
+    box-shadow: none;
+}
+
+button.slick-prev {
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+button.slick-next {
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#notorama-carousel .slick-item img {
+    margin: auto;
+}
+
+img[data-lazy] {
+    visibility: hidden;
+}
+
+/* Custom slick lightbox stuff */
+.slick-lightbox .slick-arrow {
+    height: 50%;
+    margin: auto 0;
+    background: rgba(46, 46, 46, 0.7);
+    color: #ffffff;
+}
+
+.slick-lightbox .slick-slider {
+
+}
+
+.slick-lightbox .slick-lightbox-close {
+    height: 48px;
+    width: 48px;
+    border: none;
+    background: rgba(46, 46, 46, 0.7);
+    color: #ffffff;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.slick-lightbox .slick-lightbox-close::before {
+    font-weight: bold;
+    font-size: 36px;
+    background: rgba(46, 46, 46, 0.7);
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+/* Video stuff */
+.slick-item.video {
+    top: 0;
+    bottom: 0;
+}
+
+.slick-item.video iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.iframe-loader {
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-wrapper {
+    position: relative;
+}
+
+.iframe-wrapper::after {
+    content: '';
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("play.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 48px;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    margin: auto;
+}
+
+@media (min-width: 600px) {
+    .notorama-container {
+        flex-wrap: nowrap;
+    }
+
+    .notorama-container > div {
+        width: 50% !important;
+    }
+
+    #notorama-carousel {
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #notorama-carousel .placeholder {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    #notorama-carousel.loading {
+        width: 100%;
+    }
+
+    .notorama-placeholder-thumb {
+        width: 25%;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg)}
+    100% { transform: rotate(360deg)}
+}
