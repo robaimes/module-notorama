@@ -1,0 +1,36 @@
+$notorama-dot-wrapper-margin: 1.5rem 0 !default;
+$notorama-dot-size: 1.6rem !default;
+$notorama-dot-gap: .4rem !default;
+
+$notorama-dot-border: 2px solid $color-gray60 !default;
+$notorama-dot-color: transparent !default;
+$notorama-dot-border-active: $color-orange-red1 !default;
+$notorama-dot-color-active: $color-orange-red1 !default;
+
+.slick-dots {
+    @include lib-list-reset-styles($notorama-dot-wrapper-margin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > li {
+        margin: 0 $notorama-dot-gap;
+    }
+
+    button {
+        display: block;
+        width: $notorama-dot-size;
+        height: $notorama-dot-size;
+        padding: 0;
+        border-radius: 50%;
+        border: $notorama-dot-border;
+        background-color: $notorama-dot-color;
+        box-shadow: none;
+        text-indent: -100vw;
+    }
+
+    .slick-active button {
+        border-color: $notorama-dot-border-active;
+        background-color: $notorama-dot-color-active;
+    }
+}

@@ -1,0 +1,38 @@
+$notorama-carousel-arrow-size: 3.4rem !default;
+
+$notorama-carousel-item-border: 2px solid $color-gray60 !default;
+$notorama-carousel-item-border-current: $color-orange-red1 !default;
+
+.notorama-carousel {
+    position: relative;
+    display: none;
+    
+    .slick-item img {
+        border: $notorama-carousel-item-border;
+    }
+    
+    .slick-current img {
+        border-color: $notorama-carousel-item-border-current;
+    }
+    
+    .slick-arrow {
+        width: $notorama-carousel-arrow-size;
+        height: $notorama-carousel-arrow-size;
+    }
+}
+
+@include min-screen($screen__m) {
+    .notorama-carousel {
+        display: block;
+        
+        .placeholder {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        
+        .loading {
+            width: 100%;
+        }
+    }
+}
