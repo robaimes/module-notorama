@@ -22,11 +22,11 @@
         display: block;
         margin: 0;
         padding: 0;
-        
+
         &:focus {
             outline: none;
         }
-        
+
         &.dragging {
             cursor: pointer;
             cursor: hand;
@@ -40,7 +40,7 @@
         -o-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
-    
+
     .slick-track {
         position: relative;
         left: 0;
@@ -48,17 +48,17 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        
+
         &:before,
         &:after {
             content: "";
             display: table;
         }
-        
+
         &:after {
             clear: both;
         }
-        
+
         .slick-loading & {
             visibility: hidden;
         }
@@ -76,21 +76,21 @@
         &.slick-loading img {
             display: none;
         }
-        
+
         display: none;
-        
+
         &.dragging img {
             pointer-events: none;
         }
-        
+
         .slick-initialized & {
             display: block;
         }
-        
+
         .slick-loading & {
             visibility: hidden;
         }
-        
+
         .slick-vertical & {
             display: block;
             height: auto;

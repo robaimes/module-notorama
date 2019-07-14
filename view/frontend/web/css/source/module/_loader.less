@@ -6,7 +6,7 @@
         0% { transform: rotate(0deg) }
         100% { transform: rotate(360deg) }
     }
-    
+
     .notorama.loading {
         position: relative;
         &::before,
@@ -18,12 +18,12 @@
             left: 0;
             right: 0;
         }
-        
+
         &::before {
             z-index: 5;
             background-color: fade(white, 60%);
         }
-        
+
         &::after {
             z-index: 10;
             width: @notorama-loader-size;
