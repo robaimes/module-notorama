@@ -12,8 +12,9 @@ define([
     return function (configurable) {
         $.widget('mage.configurable', configurable, {
             options: {
-                notoramaViewer: '',
-                notoramaCarousel: ''
+                notoramaGallery: '#notorama-gallery',
+                notoramaViewer: '#notorama-viewer',
+                notoramaCarousel: '#notorama-carousel'
             },
 
             _changeProductImage: function () {
