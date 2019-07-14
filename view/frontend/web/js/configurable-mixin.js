@@ -19,8 +19,7 @@ define([
             _changeProductImage: function () {
                 var images = this.options.spConfig.images[this.simpleProduct];
 
-                this._reloadGallery();
-                this._updateGalleryImages();
+                this._reloadGallery(images);
             },
 
             _reloadGallery: function (images) {

@@ -5,7 +5,6 @@
 var config = {
     map: {
         '*': {
-            "notoramaInit": 'Aimes_Notorama/js/notoramaInit',
             "notorama": 'Aimes_Notorama/js/notorama',
             'vimeo/player': '//player.vimeo.com/api/player.js'
         }
