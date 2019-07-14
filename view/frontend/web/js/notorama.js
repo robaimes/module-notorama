@@ -86,6 +86,7 @@ define([
             self.images = this.options.images;
 
             this._initImages();
+            this._initZoom();
 
             this.validateSettings();
             this.clearPlaceholderData();
@@ -106,7 +107,6 @@ define([
             this._initGalleryItems();
             this._initSlick();
             this._initSlickLightbox();
-            this._initZoom();
 
             this._initVideoEvents();
 
