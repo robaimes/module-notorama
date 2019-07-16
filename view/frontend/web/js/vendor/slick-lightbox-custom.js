@@ -89,7 +89,7 @@
                         };
                         caption = _this.getElementCaption(el, info);
                         src = _this.getElementSrc(el);
-                        return itemTemplate(src, caption, _this.options.lazy); //4th parameter is custom, adds placeholder image
+                        return itemTemplate(src, caption, _this.options.lazy);
                     };
                 }(this);
                 links = $.map($items, createItem);
