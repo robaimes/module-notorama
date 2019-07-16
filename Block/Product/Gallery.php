@@ -16,7 +16,7 @@ use Magento\Catalog\Block\Product\View\Gallery as MagentoGallery;
 class Gallery extends MagentoGallery
 {
     /**
-     * @return 0|array
+     * @return array
      */
     public function getPlaceholderGalleryImages()
     {

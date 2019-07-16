@@ -12,9 +12,7 @@ define([
     return function (swatchRenderer) {
         $.widget('mage.SwatchRenderer', swatchRenderer, {
             options: {
-                notoramaGallery: '#notorama-gallery',
-                notoramaViewer: '#notorama-viewer',
-                notoramaCarousel: '#notorama-carousel'
+                notoramaGallery: '#notorama-gallery'
             },
 
             _loadMedia: function (eventName) {
