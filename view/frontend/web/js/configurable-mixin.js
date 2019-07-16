@@ -6,15 +6,13 @@ define([
     'jquery',
     'notorama',
     'jquery/ui',
-], function ($, notorama) {
+], function ($) {
     'use strict';
 
     return function (configurable) {
         $.widget('mage.configurable', configurable, {
             options: {
-                notoramaGallery: '#notorama-gallery',
-                notoramaViewer: '#notorama-viewer',
-                notoramaCarousel: '#notorama-carousel'
+                notoramaGallery: '#notorama-gallery'
             },
 
             _changeProductImage: function () {

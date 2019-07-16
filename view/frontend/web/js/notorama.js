@@ -10,8 +10,8 @@ define([
     'jquery',
     'vimeo/player',
     'jquery/ui',
-    'Aimes_Notorama/js/slick',
-    'Aimes_Notorama/js/slick-lightbox',
+    'Aimes_Notorama/js/vendor/slick',
+    'Aimes_Notorama/js/vendor/slick-lightbox',
 ], function ($, Vimeo) {
     'use strict';
 

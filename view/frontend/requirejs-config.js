@@ -16,6 +16,9 @@ var config = {
             },
             'Magento_Swatches/js/swatch-renderer': {
                 'Aimes_Notorama/js/swatch-renderer-mixin': true
+            },
+            'Aimes_Notorama/js/slick-lightbox': {
+                'Aimes_Notorama/js/slick-lightbox-mixin' : true
             }
         }
     }
