@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Rob Aimes - https://aimes.dev
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Aimes_Notorama">
+        <var name="gallery">
+            <var name="zoom">
+                <var name="enabled">true</var>
+                <var name="position">top_right</var> <!-- top_right | top_left | bottom_left | bottom_right (Default: top_right)-->
+            </var>
+
+            <var name="viewer">
+                <var name="arrows">true</var>
+                <var name="dots">true</var>
+                <var name="infinite">true</var>
+                <var name="lazyload">true</var>
+            </var>
+
+            <var name="carousel">
+                <var name="arrows">true</var>
+                <var name="slides_to_show">4</var>
+            </var>
+
+            <var name="lightbox">
+                <var name="arrows">true</var>
+                <var name="fade">true</var>
+                <var name="lazyload">true</var>
+            </var>
+        </var>
+
+        <var name="breakpoints">
+            <var name="mobile">
+                <var name="min-width">768</var> <!-- px value (Default: 768) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slides_to_show">4</var>
+                </var>
+            </var>
+
+            <var name="tablet">
+                <var name="min-width">1024</var> <!-- px value (Default: 1024) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slides_to_show">4</var>
+                </var>
+            </var>
+
+            <var name="desktop">
+                <var name="min-width">1440</var> <!-- px value (Default: 1440) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slides_to_show">4</var>
+                </var>
+            </var>
+        </var>
+    </vars>
+</view>
