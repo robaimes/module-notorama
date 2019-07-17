@@ -43,7 +43,7 @@
             /* Creates individual slides to be used with slick. If `options.images` array is specified, it uses it's contents, otherwise loops through elements' `options.itemSelector`. */
             var $items, createItem, itemTemplate, lazyPlaceholder, length, links;
             lazyPlaceholder = this.options.lazyPlaceholder || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-            itemTemplate = function (source, caption, lazy, placeholder) {
+            itemTemplate = function (source, caption, lazy) {
                 var imgSourceParams;
                 if (lazy === true) {
                     imgSourceParams = ' data-lazy="' + source + '" src="' + lazyPlaceholder + '" ';
@@ -52,6 +52,7 @@
                 }
 
                 // The video implementation is custom as lightbox library does not support it
+                // Custom code begins here
                 var videoService,
                     isVideo = false;
 
@@ -66,7 +67,7 @@
                 if (isVideo) {
                     return '<div class="slick-lightbox-slick-item">\n  <div class="slick-lightbox-slick-item-inner video ' + videoService + '">\n    <iframe frameborder="0" allowfullscreen src="' + source + '" class="slick-lightbox-slick-img" height="1080" width="1920"></iframe>\n    ' + caption + '\n  </div>\n</div>';
                 }
-                // Custom code end
+                // Custom code ends
 
                 return '<div class="slick-lightbox-slick-item">\n  <div class="slick-lightbox-slick-item-inner">\n    <img class="slick-lightbox-slick-img" ' + imgSourceParams + ' />\n    ' + caption + '\n  </div>\n</div>';
             };
@@ -81,15 +82,14 @@
                 length = $items.length;
                 createItem = function (_this) {
                     return function (el, index) {
-                        var caption, info, src, placeholder;
+                        var caption, info, src;
                         info = {
                             index: index,
                             length: length
                         };
                         caption = _this.getElementCaption(el, info);
                         src = _this.getElementSrc(el);
-                        placeholder = $(el).attr('src');
-                        return itemTemplate(src, caption, _this.options.lazy, placeholder); //4th parameter is custom, adds placeholder image
+                        return itemTemplate(src, caption, _this.options.lazy);
                     };
                 }(this);
                 links = $.map($items, createItem);

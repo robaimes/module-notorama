@@ -10,7 +10,9 @@
     <body>
         <referenceContainer name="product.info.media" htmlTag="div" htmlClass="product media notorama-container">
             <block name="notorama.gallery" class="Aimes\Notorama\Block\Product\Gallery" template="Aimes_Notorama::product/gallery.phtml">
-                <!-- Insert options -->
+                <arguments>
+                    <argument name="gallery_view_model" xsi:type="object">Aimes\Notorama\ViewModel\Product\Gallery</argument>
+                </arguments>
             </block>
         </referenceContainer>
 

@@ -7,9 +7,12 @@
  * Product media data template
  *
  * @var $block \Aimes\Notorama\Block\Product\Gallery
+ * @var $galleryViewModel \Aimes\Notorama\viewModel\Product\Gallery
  */
+$galleryViewModel = $block->getGalleryViewModel();
+$jsConfig = $galleryViewModel->getJsConfig($block->getGalleryImagesJson());
 ?>
-<div id="notorama-gallery" class="notorama loading" data-mage-init='{"notorama": <?= $block->getJsConfig() ?>}'>
+<div id="notorama-gallery" class="notorama loading" data-mage-init='{"notorama": <?= $jsConfig ?>}'>
     <div id="gallery-placeholder" class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
         <div class="notorama-view-wrapper">
             <div id="notorama-viewer" class="notorama-gallery-view">
