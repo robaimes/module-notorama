@@ -1,0 +1,22 @@
+@notorama-zoom-btn-size: @notorama-btn-size;
+@notorama-zoom-icon-color: e(replace("@{color-gray60}", "#", "%23"));
+@notorama-zoom-icon: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='@{notorama-zoom-icon-color}' d='M497.913 497.914c-18.782 18.781-49.226 18.781-68.008 0l-84.862-84.864c-34.89 22.366-76.131 35.718-120.66 35.718C100.468 448.768 0 348.314 0 224.384 0 100.454 100.468 0 224.383 0c123.931 0 224.384 100.453 224.384 224.384 0 44.529-13.353 85.771-35.718 120.675l84.863 84.849c18.783 18.781 18.783 49.223.001 68.006zM224.383 64.11c-88.511 0-160.274 71.763-160.274 160.274 0 88.526 71.764 160.274 160.274 160.274 88.526 0 160.273-71.748 160.273-160.274 0-88.511-71.747-160.274-160.273-160.274zm32.055 256.438H192.33v-64.109h-64.11V192.33h64.109v-64.11h64.108v64.11h64.11v64.109h-64.11v64.109z'/%3E%3C/svg%3E");
+@notorama-zoom-icon-size: 30px;
+
+& when (@media-common = true) {
+    .notorama-zoom {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @notorama-zoom-btn-size;
+        height: @notorama-zoom-btn-size;
+        border-radius: @button__border-radius;
+        background: @notorama-zoom-icon center/@notorama-zoom-icon-size no-repeat;
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+            background-color: fade(black, 10%);
+        }
+    }
+}

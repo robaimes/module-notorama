@@ -1,0 +1,37 @@
+$notorama-loader-size: 6.4rem !default;
+$notorama-loader-color: $color-orange-red1 !default;
+
+@keyframes spin {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+
+.notorama.loading {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    &::before {
+        z-index: 5;
+        background-color: rgba(white, .6);
+    }
+    
+    &::after {
+        z-index: 10;
+        width: $notorama-loader-size;
+        height: $notorama-loader-size;
+        margin: auto;
+        border-radius: 50%;
+        border: 1.6rem solid $color-gray37;
+        border-top-color: $notorama-loader-color;
+        animation: spin 2s linear infinite;
+    }
+}

@@ -16,17 +16,17 @@ $jsConfig = $galleryViewModel->getJsConfig($block->getGalleryImagesJson());
     <div id="gallery-placeholder" class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
         <div class="notorama-view-wrapper">
             <div id="notorama-viewer" class="notorama-gallery-view">
-                <button type="button" class="slick-arrow slick-prev">
-                    <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
-                        <path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="#fff"></path>
+                <button type="button" class="slick-arrow slick-prev" aria-label="<?= $block->escapeHtml(__('Previous')) ?>">
+                    <svg viewBox="0 0 32 32" width="32" height="32">
+                        <path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="currentColor"></path>
                     </svg>
                 </button>
                 <div class="placeholder">
                     <img class="notorama-placeholder-img" src="<?= $block->getPlaceholderImage() ?>" alt="<?= $block->getPlaceholderImageCaption() ?>" />
                 </div>
-                <button type="button" class="slick-arrow slick-next">
-                    <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
-                        <path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="#fff"></path>
+                <button type="button" class="slick-arrow slick-next" aria-label="<?= $block->escapeHtml(__('Next')) ?>">
+                    <svg viewBox="0 0 32 32" width="32" height="32">
+                        <path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="currentColor"></path>
                     </svg>
                 </button>
             </div>
@@ -41,10 +41,10 @@ $jsConfig = $galleryViewModel->getJsConfig($block->getGalleryImagesJson());
                 <?php endforeach; ?>
             </ul>
         </div>
-        <div id="notorama-carousel">
-            <button type="button" class="slick-arrow slick-prev">
-                <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
-                    <path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="#fff"></path>
+        <div id="notorama-carousel" class="notorama-carousel">
+            <button type="button" class="slick-arrow slick-prev" aria-label="<?= $block->escapeHtml(__('Previous')) ?>">
+                <svg viewBox="0 0 32 32" width="32" height="32">
+                    <path d="M 19.41,20.09 14.83,15.5 19.41,10.91 18,9.5 l -6,6 6,6 z" fill="currentColor"></path>
                 </svg>
             </button>
             <div class="placeholder">
@@ -54,9 +54,9 @@ $jsConfig = $galleryViewModel->getJsConfig($block->getGalleryImagesJson());
                 </div>
                 <?php endforeach ?>
             </div>
-            <button type="button" class="slick-arrow slick-next">
-                <svg height="100%" version="1.1" viewBox="0 0 32 32" width="100%">
-                    <path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="#fff"></path>
+            <button type="button" class="slick-arrow slick-next" aria-label="<?= $block->escapeHtml(__('Next')) ?>">
+                <svg viewBox="0 0 32 32" width="32" height="32">
+                    <path d="m 12.59,20.34 4.58,-4.59 -4.58,-4.59 1.41,-1.41 6,6 -6,6 z" fill="currentColor"></path>
                 </svg>
             </button>
         </div>

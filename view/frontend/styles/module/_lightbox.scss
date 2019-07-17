@@ -1,0 +1,53 @@
+$notorama-lightbox-btn-size: $notorama-btn-size !default;
+$notorama-lightbox-btn-icon-size: 1.8rem !default;
+
+$notorama-lightbox-btn-border-color: transparent !default;
+$notorama-lightbox-btn-bg: rgba(black, .34) !default;
+$notorama-lightbox-btn-color: #fff !default;
+$notorama-lightbox-btn-border-color-focus: transparent !default;
+$notorama-lightbox-btn-bg-focus: rgba(black, .6) !default;
+$notorama-lightbox-btn-color-focus: #fff !default;
+
+.lightbox-open {
+    overflow: hidden;
+}
+
+// Custom slick-lightbox styles
+.slick-lightbox-close {
+    width: $notorama-lightbox-btn-size;
+    height: $notorama-lightbox-btn-size;
+    
+    &::before {
+        content: $icon-remove;
+        font-family: $icons__font-name;
+        font-size: $notorama-lightbox-btn-icon-size;
+    }
+
+    &:not(.primary) {
+        box-shadow: none;
+    }
+}
+
+.slick-lightbox-close,
+.slick-lightbox .slick-arrow {
+    border-color: $notorama-lightbox-btn-border-color;
+    background: $notorama-lightbox-btn-bg;
+    color: $notorama-lightbox-btn-color;
+    
+    &:focus,
+    &:hover {
+        border-color: $notorama-lightbox-btn-border-color-focus;
+        background: $notorama-lightbox-btn-bg-focus;
+        color: $notorama-lightbox-btn-color-focus;
+    }
+}
+
+.slick-lightbox {
+    .slick-prev {
+        left: 10px;
+    }
+    
+    .slick-next {
+        right: 10px;
+    }
+}

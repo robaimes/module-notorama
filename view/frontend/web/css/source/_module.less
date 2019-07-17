@@ -1,0 +1,45 @@
+// Vendors
+@import "module/vendor/_slick";
+@import "module/vendor/_slick-lightbox";
+
+// Global vars
+@notorama-btn-size: 4.8rem;
+
+// Module
+@import "module/_arrow";
+@import "module/_dots";
+@import "module/_zoom";
+@import "module/_slider";
+@import "module/_carousel";
+
+@import "module/_loader";
+@import "module/_video";
+@import "module/_lightbox";
+
+& when (@media-common = true) {
+    img[data-lazy] {
+        visibility: hidden;
+    }
+
+    .notorama {
+        position: relative;
+        max-width: 100%;
+        text-align: center;
+
+        &-view-wrapper {
+            position: relative;
+        }
+
+        &-placeholder-img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// Desktop
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .notorama-placeholder-thumb {
+        width: 25%;
+    }
+}

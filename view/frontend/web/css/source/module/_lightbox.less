@@ -1,0 +1,55 @@
+@notorama-lightbox-btn-size: @notorama-btn-size;
+@notorama-lightbox-btn-icon-size: 1.8rem;
+
+@notorama-lightbox-btn-border-color: transparent;
+@notorama-lightbox-btn-bg: fade(black, 34%);
+@notorama-lightbox-btn-color: #fff;
+@notorama-lightbox-btn-border-color-focus: transparent;
+@notorama-lightbox-btn-bg-focus: fade(black, 60%);
+@notorama-lightbox-btn-color-focus: #fff;
+
+& when (@media-common = true) {
+    .lightbox-open {
+        overflow: hidden;
+    }
+
+    // Custom slick-lightbox styles
+    .slick-lightbox-close {
+        width: @notorama-lightbox-btn-size;
+        height: @notorama-lightbox-btn-size;
+
+        &::before {
+            content: @icon-remove;
+            font-family: @icons__font-name;
+            font-size: @notorama-lightbox-btn-icon-size;
+        }
+    }
+
+    .slick-lightbox-close,
+    .slick-lightbox .slick-arrow {
+        border-color: @notorama-lightbox-btn-border-color;
+        background: @notorama-lightbox-btn-bg;
+        color: @notorama-lightbox-btn-color;
+
+        &:not(.primary) {
+            box-shadow: none;
+        }
+
+        &:focus,
+        &:hover {
+            border-color: @notorama-lightbox-btn-border-color-focus;
+            background: @notorama-lightbox-btn-bg-focus;
+            color: @notorama-lightbox-btn-color-focus;
+        }
+    }
+
+    .slick-lightbox {
+        .slick-prev {
+            left: 10px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+    }
+}
