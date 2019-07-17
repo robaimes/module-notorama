@@ -35,10 +35,10 @@ $notorama-video-btn-icon: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xml
         padding: 1rem;
         border-radius: 50%;
         background:
-        rgba(black, .8)
-        $notorama-video-btn-icon
-        center/contain
-        no-repeat;
-        cursor: pointer;
+            rgba(black, .8)
+            $notorama-video-btn-icon
+            center/contain
+            no-repeat;
+            cursor: pointer;
     }
 }
