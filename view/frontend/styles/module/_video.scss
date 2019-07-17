@@ -21,7 +21,7 @@ $notorama-video-btn-icon: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xml
 
 .iframe-wrapper {
     position: relative;
-    
+
     &::after {
         content: "";
         position: absolute;
@@ -40,5 +40,9 @@ $notorama-video-btn-icon: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xml
             center/contain
             no-repeat;
             cursor: pointer;
+    }
+
+    .iframe-loader {
+        height: 100%;
     }
 }
