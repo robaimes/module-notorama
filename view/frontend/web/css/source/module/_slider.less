@@ -1,11 +1,31 @@
 & when (@media-common = true) {
-    .slick-track {
-        display: flex;
-        align-items: center;
+    .slick-initialized .slick-slide {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
     }
 
     .slick-slide img {
         margin-right: auto;
         margin-left: auto;
+    }
+}
+
+// Desktop
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .notorama.vertical {
+        .gallery-placeholder {
+            display: flex;
+
+            .notorama-carousel {
+                order: 1;
+                max-width: 25%;
+            }
+
+            .notorama-view-wrapper {
+                order: 2;
+                max-width: 75%;
+            }
+        }
     }
 }

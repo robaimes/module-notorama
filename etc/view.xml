@@ -10,19 +10,21 @@
         <var name="gallery">
             <var name="zoom">
                 <var name="enabled">true</var>
-                <var name="position">top_right</var> <!-- top_right | top_left | bottom_left | bottom_right (Default: top_right)-->
+                <var name="position">top-right</var> <!-- top-right | top-left | bottom-left | bottom-right (Default: top-right)-->
             </var>
 
             <var name="viewer">
                 <var name="arrows">true</var>
                 <var name="dots">true</var>
-                <var name="infinite">true</var>
                 <var name="lazyload">true</var>
+                <var name="fade">false</var>
             </var>
 
             <var name="carousel">
                 <var name="arrows">true</var>
                 <var name="slides_to_show">4</var>
+                <var name="vertical">false</var>
+                <var name="center">false</var>
             </var>
 
             <var name="lightbox">

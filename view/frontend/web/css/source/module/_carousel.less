@@ -8,11 +8,13 @@
         position: relative;
         display: none;
 
-        .slick-item img {
+        .slick-item img,
+        .notorama-placeholder-thumb img {
             border: @notorama-carousel-item-border;
         }
 
-        .slick-current img {
+        .slick-current img,
+        .notorama-placeholder-thumb.slick-current img {
             border-color: @notorama-carousel-item-border-current;
         }
 
@@ -30,6 +32,7 @@
         .placeholder {
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
             width: 100%;
         }
 

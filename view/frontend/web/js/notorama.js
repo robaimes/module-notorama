@@ -25,6 +25,7 @@ define([
         options: {
             initialImages: [],
             images: null,
+            zoom: true,
             viewerOptions: {
                 asNavFor: carouselSelector,
                 rows: 0,
@@ -45,7 +46,8 @@ define([
                 lazyLoad: 'ondemand',
                 nextArrow: nextArrowHtml,
                 prevArrow: prevArrowHtml,
-                mobileFirst: true
+                mobileFirst: true,
+                vertical: true
             },
             lightboxOptions: {
                 src: 'data-fullscreen-src',
@@ -86,7 +88,7 @@ define([
             self.images = this.options.images;
 
             this._initImages();
-            this._initZoom();
+            this.options.zoom ? this._initZoom() : null;
 
             this.validateSettings();
             this.clearPlaceholderData();
