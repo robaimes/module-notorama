@@ -6,6 +6,13 @@ $notorama-carousel-item-border-current: $color-orange-red1 !default;
 .notorama-carousel {
     position: relative;
 
+    .placeholder {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
     .slick-item img,
     .notorama-placeholder-thumb img {
         border: $notorama-carousel-item-border;
@@ -25,13 +32,6 @@ $notorama-carousel-item-border-current: $color-orange-red1 !default;
 @media screen and (min-width: $screen__m) {
     .notorama-carousel {
         display: block;
-
-        .placeholder {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
-        }
 
         .loading {
             width: 100%;
