@@ -22,7 +22,7 @@
 
             <var name="carousel">
                 <var name="arrows">true</var>
-                <var name="slides_to_show">4</var>
+                <var name="slidesToShow">4</var>
                 <var name="vertical">false</var>
                 <var name="center">false</var>
             </var>
@@ -32,10 +32,34 @@
                 <var name="fade">true</var>
                 <var name="lazyload">true</var>
             </var>
+
+            <var name="enable_breakpoints">true</var>
         </var>
 
+        <!--
+            Enter as many breakpoints as needed, in order from smallest to largest
+            Change individual settings for each element based on the current breakpoint
+        -->
         <var name="breakpoints">
             <var name="mobile">
+                <var name="min-width">480</var> <!-- px value (Default: 480) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slidesToShow">2</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
+                </var>
+            </var>
+
+            <var name="tablet">
                 <var name="min-width">768</var> <!-- px value (Default: 768) -->
 
                 <var name="viewer">
@@ -45,11 +69,15 @@
 
                 <var name="carousel">
                     <var name="arrows">true</var>
-                    <var name="slides_to_show">4</var>
+                    <var name="slidesToShow">3</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
                 </var>
             </var>
 
-            <var name="tablet">
+            <var name="desktop">
                 <var name="min-width">1024</var> <!-- px value (Default: 1024) -->
 
                 <var name="viewer">
@@ -59,11 +87,15 @@
 
                 <var name="carousel">
                     <var name="arrows">true</var>
-                    <var name="slides_to_show">4</var>
+                    <var name="slidesToShow">4</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
                 </var>
             </var>
 
-            <var name="desktop">
+            <var name="xl">
                 <var name="min-width">1440</var> <!-- px value (Default: 1440) -->
 
                 <var name="viewer">
@@ -73,7 +105,12 @@
 
                 <var name="carousel">
                     <var name="arrows">true</var>
-                    <var name="slides_to_show">4</var>
+                    <var name="slidesToShow">4</var>
+                    <var name="vertical">true</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
                 </var>
             </var>
         </var>

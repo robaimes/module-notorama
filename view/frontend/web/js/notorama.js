@@ -25,6 +25,7 @@ define([
         options: {
             initialImages: [],
             images: null,
+            enableBreakpoints: true,
             zoom: true,
             viewerOptions: {
                 asNavFor: carouselSelector,
@@ -36,7 +37,8 @@ define([
                 prevArrow: prevArrowHtml,
                 dots: true,
                 appendDots: '#notorama-dots',
-                mobileFirst: true
+                mobileFirst: true,
+                responsive: []
             },
             carouselOptions: {
                 asNavFor: viewerSelector,
@@ -47,17 +49,20 @@ define([
                 nextArrow: nextArrowHtml,
                 prevArrow: prevArrowHtml,
                 mobileFirst: true,
-                vertical: true
+                vertical: false,
+                responsive: []
             },
             lightboxOptions: {
                 src: 'data-fullscreen-src',
                 rows: 0,
                 lazy: true,
                 itemSelector: '.slick-item img, .slick-item iframe, .slick-item .iframe-loader',
+                mobileFirst: true,
                 slick: {
                     nextArrow: nextArrowHtml,
                     prevArrow: prevArrowHtml,
-                    mobileFirst: true
+                    mobileFirst: true,
+                    responsive: []
                 },
                 shouldOpen: function(slickLightbox, element){
                     return !element.hasClass('iframe-loader');
@@ -132,6 +137,7 @@ define([
             this.galleryCarousel.slick(this.options.carouselOptions);
 
             this._initCarouselClickFunctions();
+            this._initBreakpoints();
         },
 
         _initSlickLightbox: function() {
@@ -161,7 +167,28 @@ define([
         },
 
         _initBreakpoints: function() {
-            // Try to use slick breakpoints options if possible. Failing that, enquire.
+            var self = this;
+
+            if (this.options.enableBreakpoints) {
+                self.galleryCarousel.on('breakpoint', function(event, slick, breakpoint){
+                    var result = self.options.carouselOptions.responsive.filter(bp => {
+                        return bp.breakpoint === breakpoint
+                    });
+
+                    if (result[0].settings.vertical) {
+                        $('#notorama-gallery').addClass('vertical');
+                        self.galleryCarousel.slick('slickSetOption', 'verticalSwiping', true, false);
+                    } else {
+                        $('#notorama-gallery').removeClass('vertical');
+                    }
+                });
+
+                // The vertical class changes the position of the element and is applied after initialisation, so a recalculation is required
+                if (self.galleryCarousel.slick('getSlick').options.vertical) {
+                    $('#notorama-gallery').addClass('vertical');
+                    self.galleryCarousel.slick('slickSetOption', 'verticalSwiping', true, true);
+                }
+            }
         },
 
         _initZoom: function() {
@@ -198,7 +225,9 @@ define([
                     iframe.play();
                 });
                 parent.find('.embed-video.youtube').on('load', function (e) {
-                    this.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                    if ($(this).parent().hasClass('slick-current')) { // prevent clones from playing
+                        this.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                    }
                 });
             });
         },
@@ -269,8 +298,15 @@ define([
         validateSettings: function() {
             this.validateInitalisation();
             this.validateViewerFade();
+            this.validateVertical();
 
             this.validateCarouselItems();
+        },
+
+        validateVertical: function() {
+            if (this.options.vertical) {
+                this.options.verticalSwiping = true;
+            }
         },
 
         /**

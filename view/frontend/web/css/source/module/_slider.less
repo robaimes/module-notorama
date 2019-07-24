@@ -10,22 +10,3 @@
         margin-left: auto;
     }
 }
-
-// Desktop
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .notorama.vertical {
-        .gallery-placeholder {
-            display: flex;
-
-            .notorama-carousel {
-                order: 1;
-                max-width: 25%;
-            }
-
-            .notorama-view-wrapper {
-                order: 2;
-                max-width: 75%;
-            }
-        }
-    }
-}
