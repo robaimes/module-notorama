@@ -4,6 +4,11 @@
 
 // Global vars
 $notorama-btn-size: 4.8rem !default;
+$color-orange-red1: #ff5501 !default;
+$color-gray60: #999 !default;
+$text__color: #333 !default;
+$screen__m: 768px !default;
+$button__border-radius: 3px !default;
 
 // Module
 @import "module/_arrow";
@@ -15,6 +20,7 @@ $notorama-btn-size: 4.8rem !default;
 @import "module/_loader";
 @import "module/_video";
 @import "module/_lightbox";
+@import "module/_vertical";
 
 
 img[data-lazy] {
