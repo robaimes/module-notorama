@@ -4,16 +4,34 @@ $notorama-zoom-icon-size: 30px !default;
 
 .notorama-zoom {
     position: absolute;
-    top: 0;
-    right: 0;
     width: $notorama-zoom-btn-size;
     height: $notorama-zoom-btn-size;
     border-radius: $button__border-radius;
     background: $notorama-zoom-icon center/$notorama-zoom-icon-size no-repeat;
     cursor: pointer;
-    
+
+    &.top-left {
+        top: 0;
+        left: 0;
+    }
+
+    &.top-right {
+        top: 0;
+        right: 0;
+    }
+
+    &.bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+
+    &.bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+
     &:focus,
     &:hover {
-        background-color: rgba(black, .1);
+        background-color: rgba(0, 0, 0, 0.9);
     }
 }

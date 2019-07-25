@@ -52,4 +52,26 @@
             right: 10px;
         }
     }
+
+    .slick-lightbox-slick-item-inner {
+        &.video {
+            position: relative;
+            width: 100%;
+
+            &::before {
+                content: '';
+                display: block;
+                padding-top: 56.25%;
+            }
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }

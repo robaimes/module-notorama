@@ -1,16 +1,16 @@
-$notorama-arrow-size: $notorama-btn-size !default;
+$notorama-arrow-size: $notorama-btn-size;
 
 $notorama-arrow-btn-border-color: transparent;
 $notorama-arrow-btn-bg: transparent;
 $notorama-arrow-btn-color: $text__color;
 $notorama-arrow-btn-border-color-focus: transparent;
-$notorama-arrow-btn-bg-focus: rgba(black, .1);
+$notorama-arrow-btn-bg-focus: fade(black, 10%);
 $notorama-arrow-btn-color-focus: $text__color;
 
 .slick-arrow {
     z-index: 1;
     position: absolute;
-    top: calc(50% - ($notorama-arrow-size / 2));
+    top: calc(50% - (#{$notorama-arrow-size} / 2));
     width: $notorama-arrow-size;
     height: $notorama-arrow-size;
     padding: 0;
@@ -18,7 +18,7 @@ $notorama-arrow-btn-color-focus: $text__color;
     background: $notorama-arrow-btn-bg;
     color: $notorama-arrow-btn-color;
     line-height: 1;
-    
+
     &:focus,
     &:hover {
         border-color: $notorama-arrow-btn-border-color-focus;
@@ -29,15 +29,15 @@ $notorama-arrow-btn-color-focus: $text__color;
     &:not(.primary) {
         box-shadow: none;
     }
-    
+
     &.slick-prev {
         left: 0;
     }
-    
+
     &.slick-next {
         right: 0;
     }
-    
+
     svg {
         width: 100%;
         height: 100%;

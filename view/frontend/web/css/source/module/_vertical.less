@@ -1,0 +1,35 @@
+& when (@media-common = true) {
+    .notorama.vertical {
+        .gallery-placeholder {
+            display: flex;
+
+            .notorama-carousel.slick-vertical {
+                display: flex;
+                align-items: center;
+                order: 1;
+                max-width: 25%;
+
+                .slick-arrow {
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    transform: rotate(90deg);
+
+                    &.slick-prev {
+                        top: 0;
+                    }
+
+                    &.slick-next {
+                        bottom: 0;
+                        top: initial;
+                    }
+                }
+            }
+
+            .notorama-view-wrapper {
+                order: 2;
+                max-width: 75%;
+            }
+        }
+    }
+}
