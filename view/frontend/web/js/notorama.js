@@ -8,12 +8,13 @@
 
 define([
     'jquery',
-    'vimeo/player',
     'jquery/ui',
     'Aimes_Notorama/js/vendor/slick',
     'Aimes_Notorama/js/vendor/slick-lightbox-custom',
-], function ($, Vimeo) {
+], function ($) {
     'use strict';
+
+    var Vimeo;
 
     var viewerSelector = '#notorama-viewer',
         carouselSelector = '#notorama-carousel',
@@ -174,8 +175,10 @@ define([
         _initVideoEvents: function () { // Pause video when slide is changed or zoom/fullscreen opened
             $('body').on('show.slickLightbox beforeChange', function() { // Using body selector to account for lightbox modal
                 $('.slick-item.video.vimeo iframe, .slick-lightbox-slick-item-inner.vimeo iframe').each(function () {
-                    var iframe = new Vimeo(this);
-                    iframe.pause();
+                    var iframe = this.createVimeoInstance(this);
+                    if (iframe) {
+                        iframe.pause();
+                    }
                 });
                 $('.slick-item.video.youtube iframe, .slick-lightbox-slick-item-inner.youtube iframe').each(function () {
                     this.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
@@ -192,8 +195,10 @@ define([
                 parent.empty();
                 parent.append(`<iframe class="embed-video ${service}" allowfullscreen frameBorder="0" src="${src}" data-fullscreen-src="${src}"></iframe>`);
                 parent.find('.embed-video.vimeo').on('load', function (e) {
-                    var iframe = new Vimeo(this);
-                    iframe.play();
+                    var iframe = this.createVimeoInstance(this);
+                    if (iframe) {
+                        iframe.play();
+                    }
                 });
                 parent.find('.embed-video.youtube').on('load', function (e) {
                     this.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
@@ -206,6 +211,43 @@ define([
             this.galleryViewer.off('click.slickLightbox');
             this.galleryViewer.slick('unslick');
             this.galleryCarousel.slick('unslick');
+        },
+
+        /**
+         * Get instance of Vimeo object.
+         *
+         * @param args
+         * @return {null|*}
+         */
+        createVimeoInstance: function(args) {
+            try {
+                var vimeoPlayerInstance = this.getVimeoPlayer();
+                return new vimeoPlayerInstance(args);
+            } catch (e) {
+                console.error('Cannot instantiate Vimeo player', e);
+            }
+
+            return null;
+        },
+
+        /**
+         * Dynamically load Vimeo code, in case it fails loading the player.
+         * @return {*}
+         */
+        getVimeoPlayer: function() {
+            if (Vimeo !== undefined && Vimeo) {
+                return Vimeo;
+            }
+
+            try {
+                require(['vimeo/player'], function(VimeoPlayer) {
+                    Vimeo = VimeoPlayer;
+                });
+            } catch (e) {
+                throw new Error('Unable to load vimeo player.');
+            }
+
+            return Vimeo;
         },
 
         clearPlaceholderData: function () {
