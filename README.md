@@ -1,5 +1,11 @@
 # Aimes_Notorama
 
+### I no longer have the capacity to work on this. This repository is no longer maintained.
+
+You're welcome to fork, continue, or whatever you like.
+
+---------------------------
+
 Magento 2 module: Remove's Fotorama and, hopefully, headaches.
 
 Replaces the Magento 2 standard Fotorama gallery with a slick variant, as also used in PageBuilder for Magento Commerce stores.
