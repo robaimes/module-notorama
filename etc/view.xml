@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Rob Aimes - https://aimes.dev
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Aimes_Notorama">
+        <var name="gallery">
+            <var name="zoom">
+                <var name="enabled">true</var>
+                <var name="position">top-right</var> <!-- top-right | top-left | bottom-left | bottom-right (Default: top-right)-->
+            </var>
+
+            <var name="viewer">
+                <var name="arrows">true</var>
+                <var name="dots">true</var>
+                <var name="lazyload">true</var>
+                <var name="fade">false</var>
+            </var>
+
+            <var name="carousel">
+                <var name="arrows">true</var>
+                <var name="slidesToShow">4</var>
+                <var name="vertical">false</var>
+                <var name="center">false</var>
+            </var>
+
+            <var name="lightbox">
+                <var name="arrows">true</var>
+                <var name="fade">true</var>
+                <var name="lazyload">true</var>
+            </var>
+
+            <var name="enable_breakpoints">true</var>
+        </var>
+
+        <!--
+            Enter as many breakpoints as needed, in order from smallest to largest
+            Change individual settings for each element based on the current breakpoint
+        -->
+        <var name="breakpoints">
+            <var name="mobile">
+                <var name="min-width">480</var> <!-- px value (Default: 480) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slidesToShow">2</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
+                </var>
+            </var>
+
+            <var name="tablet">
+                <var name="min-width">768</var> <!-- px value (Default: 768) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slidesToShow">3</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
+                </var>
+            </var>
+
+            <var name="desktop">
+                <var name="min-width">1024</var> <!-- px value (Default: 1024) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slidesToShow">4</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
+                </var>
+            </var>
+
+            <var name="xl">
+                <var name="min-width">1440</var> <!-- px value (Default: 1440) -->
+
+                <var name="viewer">
+                    <var name="arrows">true</var>
+                    <var name="dots">true</var>
+                </var>
+
+                <var name="carousel">
+                    <var name="arrows">true</var>
+                    <var name="slidesToShow">4</var>
+                    <var name="vertical">true</var>
+                </var>
+
+                <var name="lightbox">
+                    <var name="arrows">true</var>
+                </var>
+            </var>
+        </var>
+    </vars>
+</view>

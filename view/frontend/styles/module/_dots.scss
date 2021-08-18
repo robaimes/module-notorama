@@ -8,7 +8,7 @@ $notorama-dot-border-active: $color-orange-red1 !default;
 $notorama-dot-color-active: $color-orange-red1 !default;
 
 .slick-dots {
-    @include lib-list-reset-styles($notorama-dot-wrapper-margin);
+    margin: $notorama-dot-wrapper-margin;
     display: flex;
     justify-content: center;
     align-items: center;

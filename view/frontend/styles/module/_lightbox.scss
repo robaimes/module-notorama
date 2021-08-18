@@ -1,12 +1,14 @@
-$notorama-lightbox-btn-size: $notorama-btn-size !default;
-$notorama-lightbox-btn-icon-size: 1.8rem !default;
+$notorama-lightbox-btn-size: $notorama-btn-size;
+$notorama-lightbox-btn-icon-size: 1.8rem;
 
-$notorama-lightbox-btn-border-color: transparent !default;
-$notorama-lightbox-btn-bg: rgba(black, .34) !default;
-$notorama-lightbox-btn-color: #fff !default;
-$notorama-lightbox-btn-border-color-focus: transparent !default;
-$notorama-lightbox-btn-bg-focus: rgba(black, .6) !default;
-$notorama-lightbox-btn-color-focus: #fff !default;
+$notorama-lightbox-btn-border-color: transparent;
+$notorama-lightbox-btn-bg: fade(black, 34%);
+$notorama-lightbox-btn-color: #fff;
+$notorama-lightbox-btn-border-color-focus: transparent;
+$notorama-lightbox-btn-bg-focus: fade(black, 60%);
+$notorama-lightbox-btn-color-focus: #fff;
+
+$icon-remove: 'x' !default;
 
 .lightbox-open {
     overflow: hidden;
@@ -16,15 +18,11 @@ $notorama-lightbox-btn-color-focus: #fff !default;
 .slick-lightbox-close {
     width: $notorama-lightbox-btn-size;
     height: $notorama-lightbox-btn-size;
-    
-    &::before {
-        content: $icon-remove;
-        font-family: $icons__font-name;
-        font-size: $notorama-lightbox-btn-icon-size;
-    }
 
-    &:not(.primary) {
-        box-shadow: none;
+    &::before {
+        content: $icon-remove; // Change variable to code from font for better visuals
+        font-family: inherit; // Change to icon font for better visuals
+        font-size: $notorama-lightbox-btn-icon-size;
     }
 }
 
@@ -33,7 +31,11 @@ $notorama-lightbox-btn-color-focus: #fff !default;
     border-color: $notorama-lightbox-btn-border-color;
     background: $notorama-lightbox-btn-bg;
     color: $notorama-lightbox-btn-color;
-    
+
+    &:not(.primary) {
+        box-shadow: none;
+    }
+
     &:focus,
     &:hover {
         border-color: $notorama-lightbox-btn-border-color-focus;
@@ -46,8 +48,30 @@ $notorama-lightbox-btn-color-focus: #fff !default;
     .slick-prev {
         left: 10px;
     }
-    
+
     .slick-next {
         right: 10px;
+    }
+}
+
+.slick-lightbox-slick-item-inner {
+    &.video {
+        position: relative;
+        width: 100%;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
